@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PokeApiService } from './services/poke-api.service';
 import { CommonModule } from '@angular/common';
@@ -8,9 +7,12 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [CommonModule, IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent],
+  imports: [CommonModule],
   providers: [ HttpClient, PokeApiService ],
-  standalone: true
+  standalone: true,
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppComponent {
   pokemon: any;
