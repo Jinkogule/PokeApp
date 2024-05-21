@@ -26,7 +26,7 @@ export class AppComponent {
     this.pokeApiService.getDescription('pikachu').subscribe(data => {
       const flavorTextEntries = data.flavor_text_entries;
       const englishFlavorTextEntries = flavorTextEntries.filter((entry: { language: { name: string; }; }) => entry.language.name === 'en');
-      this.description = englishFlavorTextEntries[0].flavor_text;
+      this.description = englishFlavorTextEntries[0].flavor_text.replace(/\f/g, ' ');
     });
   }
 }
