@@ -1,3 +1,17 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-header>
+    PokeApp
+  </ion-header>
+
+  <ion-content>
+    <div *ngIf="pokemon">
+      <h1>{{ pokemon.name }}</h1>
+      <img [src]="pokemon.sprites.front_default" alt="">
+    </div>
+  </ion-content>
+
+  <ion-footer>
+    PokeApp
+  </ion-footer>
 </ion-app>
+
