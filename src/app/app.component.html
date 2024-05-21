@@ -2,14 +2,19 @@
   <ion-header>
     PokeApp
   </ion-header>
-
   <ion-content>
     <div *ngIf="pokemon">
-      <h1>{{ pokemon.name }}</h1>
-      <img [src]="pokemon.sprites.front_default" alt="">
-    </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ pokemon.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img [src]="pokemon.sprites.front_default"></ion-img>
+        {{ description }}
+      </ion-card-content>
+    </ion-card>
+  </div>
   </ion-content>
-
   <ion-footer>
     PokeApp
   </ion-footer>
