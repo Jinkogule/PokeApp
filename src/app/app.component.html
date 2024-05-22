@@ -3,17 +3,18 @@
     PokeApp
   </ion-header>
   <ion-content>
-    <div *ngIf="pokemon">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>{{ pokemon.name }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-img [src]="pokemon.sprites.front_default"></ion-img>
-        {{ description }}
-      </ion-card-content>
-    </ion-card>
-  </div>
+    <div *ngFor="let pokemon of pokemons">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ pokemon.name }} - {{ pokemon.id }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-img [src]="pokemon.sprites.front_default"></ion-img>
+          {{ pokemon.description }}
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <ion-button (click)="loadPokemons()">Ver mais pokémons</ion-button>
   </ion-content>
   <ion-footer>
     PokeApp
