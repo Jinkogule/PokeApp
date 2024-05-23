@@ -1,9 +1,19 @@
 ion-col {
   padding: 1rem
 }
+ion-header{
+  background-color: #488383;
+}
 
+ion-content {
+  --background: url('../assets/images/wallpaper.png') no-repeat center center / cover;
+}
+.pokeapp-logo{
+  height: 50px;
+  margin: 5px;
+}
 .pokemon-card-img{
-  width: 250px;
+  width: 100%;
   height: auto;
   text-align: center;
   margin: 0 auto;
@@ -26,6 +36,7 @@ ion-col {
 .custom-container {
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #425f5fb4;
 }
 
 .normal-type {
