@@ -39,6 +39,21 @@ export class AppComponent {
     ).subscribe((pokemon: any) => {
       this.pokemons.push(pokemon);
       this.offset += this.limit;
+      this.sortPokemons('id')
     });
+  }
+
+  sortPokemons(orderBy: string) {
+    switch (orderBy) {
+      case 'id':
+        this.pokemons.sort((a, b) => a.id - b.id);
+        break;
+      case 'name':
+        this.pokemons.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'type':
+        this.pokemons.sort((a, b) => a.types[0].type.name.localeCompare(b.types[0].type.name));
+        break;
+    }
   }
 }
