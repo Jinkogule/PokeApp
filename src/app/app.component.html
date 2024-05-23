@@ -3,21 +3,31 @@
     PokeApp
   </ion-header>
   <ion-content>
-    <div *ngFor="let pokemon of pokemons">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>{{ pokemon.name }} - {{ pokemon.id }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-img [src]="pokemon.sprites.front_default"></ion-img>
-          {{ pokemon.description }}
-        </ion-card-content>
-      </ion-card>
+    <div class="custom-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="4" *ngFor="let pokemon of pokemons">
+            <ion-card [ngClass]="pokemon.types[0].type.name + '-type'">
+              <ion-card-header>
+                <ion-card-title>{{ pokemon.name }} - {{ pokemon.id }}</ion-card-title>
+                <div *ngFor="let ability of pokemon.abilities">
+                  {{ ability.ability.name }}
+                </div>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-img [src]="pokemon.sprites.front_default"></ion-img>
+                {{ pokemon.description }}
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button (click)="loadPokemons()">Ver mais pokémons</ion-button>
     </div>
-    <ion-button (click)="loadPokemons()">Ver mais pokémons</ion-button>
   </ion-content>
   <ion-footer>
     PokeApp
   </ion-footer>
 </ion-app>
+
 

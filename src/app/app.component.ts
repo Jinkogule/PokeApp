@@ -17,7 +17,7 @@ import { forkJoin, map, mergeMap } from 'rxjs';
 })
 export class AppComponent {
   pokemons: any[] = [];
-  limit = 10;
+  limit = 12;
   offset = 0;
 
   constructor(private pokeApiService: PokeApiService) {
