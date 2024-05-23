@@ -12,7 +12,7 @@
                 <ion-card-title class="card-title">{{ pokemon.name }}</ion-card-title>
               </ion-card-header>
               <ion-card-content class="card-content">
-                <ion-img class="pokemon-card-img" [src]="pokemon.sprites.front_default"></ion-img>
+                <ion-img class="pokemon-card-img" [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
                 {{ pokemon.description }}
               </ion-card-content>
             </ion-card>
