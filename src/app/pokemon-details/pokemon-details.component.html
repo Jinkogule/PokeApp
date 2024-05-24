@@ -1,0 +1,11 @@
+<ng-container *ngIf="pokemon">
+  {{pokemon.name}}
+  {{pokemon.height}}
+  {{pokemon.weight}}
+
+  <ul>
+    <li *ngFor="let stat of pokemon.stats">
+      {{ stat.stat.name }}: {{ stat.base_stat }}
+    </li>
+  </ul>
+</ng-container>
