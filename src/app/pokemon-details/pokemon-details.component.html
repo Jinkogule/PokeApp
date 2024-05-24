@@ -1,11 +1,16 @@
-<ng-container *ngIf="pokemon">
-  {{pokemon.name}}
-  {{pokemon.height}}
-  {{pokemon.weight}}
-
-  <ul>
-    <li *ngFor="let stat of pokemon.stats">
-      {{ stat.stat.name }}: {{ stat.base_stat }}
-    </li>
-  </ul>
-</ng-container>
+<ion-card class="card-details"*ngIf="pokemon" [ngClass]="pokemon.types[0].type.name + '-type'">
+  <ion-card-header>
+    <ion-card-title class="card-title">{{ pokemon.name }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="card-content">
+    Height: {{pokemon.height}}
+    Weight: {{pokemon.weight}}
+    <ul>
+      <li *ngFor="let stat of pokemon.stats">
+        {{ stat.stat.name }}: {{ stat.base_stat }}
+      </li>
+    </ul>
+    <ion-img class="pokemon-card-img" [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
+    {{ pokemon.description }}
+  </ion-card-content>
+</ion-card>

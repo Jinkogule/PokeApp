@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { forkJoin, map, mergeMap } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-pokedex',
@@ -21,8 +22,9 @@ export class PokedexComponent {
   pokemons: any[] = [];
   limit = 12;
   offset = 0;
+  router: any;
 
-  constructor(private pokeApiService: PokeApiService, private navCtrl: NavController) {
+  constructor(private pokeApiService: PokeApiService, private navCtrl: NavController, private animationCtrl: AnimationController) {
     this.loadPokemons();
   }
 
@@ -47,11 +49,24 @@ export class PokedexComponent {
 
   redirectToPokemonDetails(pokemon: any) {
     console.log('Destino:', `/pokemon-details/${pokemon.name}`);
-    this.navCtrl.navigateForward(`/pokemon-details/${pokemon.name}`).then(success => {
-      console.log('Foi:', success);
-    }).catch(error => {
-      console.error('Deu erro:', error);
-    });
+    this.navigateWithAnimation(`/pokemon-details/${pokemon.name}`);
+  }
+
+  navigateWithAnimation(path: string) {
+    const element = document.querySelector('#page-content');
+    if (element) {
+      const animation = this.animationCtrl
+        .create()
+        .addElement(element)
+        .duration(200)
+        .fromTo('opacity', '1', '0');
+
+      animation.play().then(() => {
+        setTimeout(() => {
+          this.navCtrl.navigateForward(path);
+        }, 200);
+      });
+    }
   }
 
   sortPokemons(orderBy: string) {

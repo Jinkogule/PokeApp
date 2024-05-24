@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
@@ -10,6 +10,9 @@ import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ioni
   styleUrls: ['./pokemon-details.component.scss'],
   imports: [CommonModule, IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent],
   standalone: true,
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class PokemonDetailsComponent  implements OnInit {
   pokemon: any;
@@ -23,4 +26,5 @@ export class PokemonDetailsComponent  implements OnInit {
         this.pokemon = data;
       });
     }
-  }}
+  }
+}
