@@ -6,6 +6,8 @@ import { forkJoin, map, mergeMap } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
 import { AnimationController } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { star, starOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-pokedex',
@@ -23,9 +25,16 @@ export class PokedexComponent {
   limit = 12;
   offset = 0;
   router: any;
+  favorites: any[] = [];
 
   constructor(private pokeApiService: PokeApiService, private navCtrl: NavController, private animationCtrl: AnimationController) {
     this.loadPokemons();
+    addIcons({star, starOutline});
+  }
+
+  ngOnInit() {
+    const favorites = localStorage.getItem('favorites');
+    this.favorites = favorites ? JSON.parse(favorites) : [];
   }
 
   loadPokemons() {
@@ -45,6 +54,20 @@ export class PokedexComponent {
       this.offset += this.limit;
       this.sortPokemons('id')
     });
+  }
+
+  addToFavorites(pokemon: any) {
+    this.favorites.push(pokemon);
+    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+  }
+
+  removeFromFavorites(pokemon: { name: any; }) {
+    this.favorites = this.favorites.filter(fav => fav.name !== pokemon.name);
+    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+  }
+
+  isFavorite(pokemon: { name: any; }) {
+    return this.favorites.some(fav => fav.name === pokemon.name);
   }
 
   redirectToPokemonDetails(pokemon: any) {

@@ -5,7 +5,10 @@
       <ion-col size="12" size-md="4" *ngFor="let pokemon of pokemons">
         <ion-card [ngClass]="pokemon.types[0].type.name + '-type'" (click)="redirectToPokemonDetails(pokemon)">
           <ion-card-header>
-            <ion-card-title class="card-title">{{ pokemon.name }}</ion-card-title>
+            <ion-card-title class="card-title">{{ pokemon.name }} - {{ pokemon.type }}</ion-card-title>
+            <ion-button fill="clear" (click)="isFavorite(pokemon) ? removeFromFavorites(pokemon) : addToFavorites(pokemon); $event.stopPropagation()">
+              <ion-icon slot="icon-only" [name]="isFavorite(pokemon) ? 'star' : 'star-outline'"></ion-icon>
+            </ion-button>
           </ion-card-header>
           <ion-card-content class="card-content">
             <ion-img class="pokemon-card-img" [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
