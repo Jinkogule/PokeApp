@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'pokemon-details/:name',
     loadComponent: () => import('./pokemon-details/pokemon-details.component').then( m => m.PokemonDetailsComponent)
   },
+  {
+    path: 'favorite-pokemons',
+    loadComponent: () => import('./favorite-pokemons/favorite-pokemons.component').then( m => m.FavoritePokemonsComponent)
+  },
 ];

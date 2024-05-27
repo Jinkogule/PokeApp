@@ -1,0 +1,23 @@
+<ion-content id="page-content">
+  <div class="custom-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="4" *ngFor="let pokemon of pokemons">
+          <ion-card [ngClass]="pokemon.types[0].type.name + '-type'">
+            <ion-card-header>
+              <ion-row style="justify-content: space-between;">
+                <ion-card-title class="card-title">{{ pokemon.name }}</ion-card-title>
+
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content class="card-content">
+              <ion-img class="pokemon-card-img" [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
+              {{ pokemon.description }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button (click)="loadFavoritePokemons()">Ver mais pokémons</ion-button>
+  </div>
+  </ion-content>

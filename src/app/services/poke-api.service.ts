@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,21 @@ export class PokeApiService {
 
   getAllPokemons(limit: number, offset: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/pokemon?limit=${limit}&offset=${offset}`);
+  }
+
+  loadPokemons(limit: number, offset: number): Observable<any[]> {
+    return this.getAllPokemons(limit, offset).pipe(
+      mergeMap(data => data.results),
+      mergeMap((pokemon: any) =>
+        forkJoin({
+          details: this.getPokemon(pokemon.name),
+          description: this.getDescription(pokemon.name)
+        })
+      ),
+      map(({ details, description }) => {
+        return { ...details, description };
+      }),
+      map(pokemon => [pokemon])
+    );
   }
 }
