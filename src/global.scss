@@ -46,9 +46,29 @@ ion-header{
 ion-content {
   --background: url('./assets/images/wallpaper.png') no-repeat center center / cover;
 }
-.pokeapp-logo{
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+
+}
+
+.pokeapp-logo {
+  flex: 1 1 auto;
+  text-align: center;
   height: 50px;
-  margin: 5px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.navbar-container ion-menu-button {
+  flex: 0 0 auto;
+}
+
+.navbar-container .button-search {
+  flex: 0 0 auto;
 }
 
 .pokemon-card {
@@ -107,6 +127,14 @@ ion-content {
   max-width: 1200px;
   margin: 0 auto;
   background-color: #425f5fb4;
+}
+
+.button-more-pokemons{
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  font-size: 18px;
+  text-transform: capitalize;
+  --background: #488383;
 }
 
 .normal-type {
