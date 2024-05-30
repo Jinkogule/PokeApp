@@ -139,7 +139,7 @@ ion-menu ion-content{
   opacity: 1;
 }
 
-.button-details{
+.button-details {
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   font-size: 18px;
@@ -151,6 +151,16 @@ ion-menu ion-content{
   max-width: 1200px;
   margin: 0 auto;
   background-color: #425f5fb4;
+}
+
+@media (max-width: 800px) {
+  .card-content {
+    transform: translateY(-55px);
+  }
+
+  .button-details-container {
+    opacity: 1;
+  }
 }
 
 .button-more-pokemons{
