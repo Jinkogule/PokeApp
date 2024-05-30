@@ -47,6 +47,30 @@ ion-content {
   --background: url('./assets/images/wallpaper.png') no-repeat center center / cover;
 }
 
+ion-menu {
+  --background: url('./assets/images/wallpaper-menu.png') no-repeat center center / cover;
+  --ion-text-color: #fff;
+
+  ion-label{
+    font-weight:bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  }
+  ion-toolbar {
+    --background: url('./assets/images/wallpaper-menu.png') no-repeat center center / cover;
+  }
+
+  ion-item {
+    --background: transparent !important;
+  }
+  .md.list-md {
+    background: linear-gradient(85deg, rgba(212,114,46,1) 26%, rgba(212, 115, 46, 0.301) 55%);
+  }
+
+}
+
+ion-menu ion-content{
+  --background: #ffffff50 !important;
+}
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;

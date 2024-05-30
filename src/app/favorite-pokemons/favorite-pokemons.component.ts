@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-favorite-pokemons',
@@ -17,8 +18,6 @@ import { star, starOutline } from 'ionicons/icons';
 })
 export class FavoritePokemonsComponent {
   pokemons: any[] = [];
-  limit = 12;
-  offset = 0;
   favorites: any[] = [];
 
   constructor(private pokeApiService: PokeApiService) {
@@ -32,11 +31,23 @@ export class FavoritePokemonsComponent {
   }
 
   loadFavoritePokemons() {
-    this.pokeApiService.loadPokemons(this.limit, this.offset).subscribe((pokemons: any[]) => {
-      const favoritePokemons = pokemons.filter(pokemon => this.isFavorite(pokemon));
-      this.pokemons.push(...favoritePokemons);
-      this.offset += this.limit;
-      this.sortPokemons('id');
+    const storedFavorites = localStorage.getItem('favorites');
+    const favorites: any[] = storedFavorites ? JSON.parse(storedFavorites) : [];
+
+    this.pokemons = [];
+    favorites.forEach(favorite => {
+        forkJoin({
+            details: this.pokeApiService.getPokemon(favorite.name),
+            description: this.pokeApiService.getDescription(favorite.name)
+        }).subscribe(
+            ({ details, description }) => {
+                details.description = description;
+                this.pokemons.push(details);
+            },
+            (error) => {
+                console.error(`Falha ao carregar detalhes de ${favorite.name}: `, error);
+            }
+        );
     });
   }
 

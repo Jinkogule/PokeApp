@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, toArray } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,10 +38,8 @@ export class PokeApiService {
           description: this.getDescription(pokemon.name)
         })
       ),
-      map(({ details, description }) => {
-        return { ...details, description };
-      }),
-      map(pokemon => [pokemon])
+      map(({ details, description }) => ({ ...details, description })),
+      toArray()
     );
   }
 }
