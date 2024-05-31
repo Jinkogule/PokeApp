@@ -1,4 +1,4 @@
-<ion-content id="page-content">
+<ion-content id="pokedex-page">
   <div class="custom-container">
     <ion-grid>
       <ion-row>
@@ -21,12 +21,14 @@
               </div>
             </ion-card-content>
             <div class="button-details-container">
-              <ion-button class="button-details"(click)="redirectToPokemonDetails(pokemon)">Detalhes</ion-button>
+              <ion-button class="button-details" (click)="redirectToPokemonDetails(pokemon)">Detalhes</ion-button>
             </div>
           </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button class="button-more-pokemons" (click)="loadPokemons()">Ver mais pokémons</ion-button>
+    <div style="display: flex; justify-content: center;">
+      <ion-button class="button-more-pokemons" (click)="loadPokemons()">Ver mais pokémons</ion-button>
+    </div>
   </div>
 </ion-content>

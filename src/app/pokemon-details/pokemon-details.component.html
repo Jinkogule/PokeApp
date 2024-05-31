@@ -1,4 +1,4 @@
-<ion-content id="page-content">
+<ion-content id="pokemon-details-page">
   <div class="custom-container">
     <ion-grid>
       <ion-card class="card-details"*ngIf="pokemon" [ngClass]="pokemon.types[0].type.name + '-type'">
@@ -51,5 +51,8 @@
         </ion-card-content>
       </ion-card>
     </ion-grid>
+    <div style="display: flex; justify-content: center;">
+      <ion-button class="button-voltar-a-pokedex" (click)="redirectToPokedex()">Voltar à Pokédex</ion-button>
+    </div>
   </div>
 </ion-content>

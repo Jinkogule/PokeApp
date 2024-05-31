@@ -2,10 +2,10 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
-import { NavController, AnimationController } from '@ionic/angular';
 import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-pokedex',
@@ -22,7 +22,7 @@ export class PokedexComponent {
   offset = 0;
   favorites: any[] = [];
 
-  constructor(private pokeApiService: PokeApiService, private navCtrl: NavController, private animationCtrl: AnimationController) {
+  constructor(private pokeApiService: PokeApiService, private appComponent: AppComponent) {
     addIcons({ star, starOutline });
   }
 
@@ -55,24 +55,7 @@ export class PokedexComponent {
   }
 
   redirectToPokemonDetails(pokemon: any) {
-    this.navigateWithAnimation(`/pokemon-details/${pokemon.name}`);
-  }
-
-  navigateWithAnimation(path: string) {
-    const element = document.querySelector('#page-content');
-    if (element) {
-      const animation = this.animationCtrl
-        .create()
-        .addElement(element)
-        .duration(200)
-        .fromTo('opacity', '1', '0');
-
-      animation.play().then(() => {
-        setTimeout(() => {
-          this.navCtrl.navigateForward(path);
-        }, 200);
-      });
-    }
+    this.appComponent.navigateWithAnimation(`/pokemon-details/${pokemon.name}`, 'pokedex-page', 'pokemon-details-page');
   }
 
   sortPokemons(orderBy: string) {

@@ -169,14 +169,6 @@ ion-menu ion-content{
   }
 }
 
-.button-more-pokemons{
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-  font-size: 18px;
-  text-transform: capitalize;
-  --background: #488383;
-}
-
 .fav-button{
   left: 0;
   color: rgb(160, 160, 54);
@@ -303,13 +295,13 @@ ion-menu ion-content{
   padding: 5px;
 }
 
-.fighting--titletype {
+.fighting-title-type {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(192,48,40,1) 100%);
   border-radius: 5px;
   padding: 5px;
 }
 
-.poison--titletype {
+.poison--title-type {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(160,64,160,1) 100%);
   border-radius: 5px;
   padding: 5px;

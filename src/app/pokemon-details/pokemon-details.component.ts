@@ -6,6 +6,7 @@ import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ioni
 import { map, mergeMap } from 'rxjs';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -23,7 +24,7 @@ export class PokemonDetailsComponent  implements OnInit {
   typeIds: number[] = [];
   isDesktop: boolean = true;
 
-  constructor(private route: ActivatedRoute, private pokeApiService: PokeApiService) {
+  constructor(private route: ActivatedRoute, private pokeApiService: PokeApiService, private appComponent: AppComponent) {
     addIcons({ star, starOutline });
   }
 
@@ -75,4 +76,9 @@ export class PokemonDetailsComponent  implements OnInit {
   handleScreenSizeChange(mediaQueryList: MediaQueryList) {
     this.isDesktop = mediaQueryList.matches;
   }
+
+  redirectToPokedex() {
+    this.appComponent.navigateWithAnimation(`/`, 'pokemon-details-page', 'pokedex-page');
+  }
+
 }
