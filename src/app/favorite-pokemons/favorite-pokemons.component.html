@@ -1,22 +1,29 @@
-<ion-content id="page-content">
+<ion-content id="favorite-pokemons-page">
   <div class="custom-container">
     <ion-grid>
       <ion-row>
         <ion-col size="12" size-md="4" *ngFor="let pokemon of pokemons">
-          <ion-card [ngClass]="pokemon.types[0].type.name + '-type'">
+          <ion-card class="pokemon-card" [ngClass]="pokemon.types[0].type.name + '-type'">
             <ion-card-header>
-              <ion-row style="justify-content: space-between;">
-                <ion-card-title class="card-title">{{ pokemon.name }} </ion-card-title>
-
-              </ion-row>
+              <ion-card-title class="card-title" [ngClass]="pokemon.types[0].type.name + '-title-type'">{{ pokemon.name }}</ion-card-title>
             </ion-card-header>
             <ion-card-content class="card-content">
-              <ion-img class="pokemon-card-img" [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
-              {{ pokemon.description }}
+              <div class="pokemon-card-img">
+                <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
+              </div>
+              <div class="pokemon-description">
+                "{{ pokemon.description }}"
+              </div>
             </ion-card-content>
+            <div class="button-details-container">
+              <ion-button class="button-details" (click)="redirectToPokemonDetails(pokemon)">Detalhes</ion-button>
+            </div>
           </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
+    <div style="display: flex; justify-content: center;">
+      <ion-button class="button-voltar-a-pokedex" (click)="redirectToPokedex()">Voltar à Pokédex</ion-button>
+    </div>
   </div>
 </ion-content>

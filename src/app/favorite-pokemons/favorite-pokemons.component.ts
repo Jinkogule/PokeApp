@@ -6,6 +6,7 @@ import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ioni
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
 import { forkJoin } from 'rxjs';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-favorite-pokemons',
@@ -20,7 +21,7 @@ export class FavoritePokemonsComponent {
   pokemons: any[] = [];
   favorites: any[] = [];
 
-  constructor(private pokeApiService: PokeApiService) {
+  constructor(private pokeApiService: PokeApiService, private appComponent: AppComponent) {
     addIcons({ star, starOutline });
   }
 
@@ -53,6 +54,14 @@ export class FavoritePokemonsComponent {
 
   isFavorite(pokemon: { name: any; }) {
     return this.favorites.some(fav => fav.name === pokemon.name);
+  }
+
+  redirectToPokedex() {
+    this.appComponent.navigateWithAnimation(`/`, 'favorite-pokemons-page', 'pokedex-page');
+  }
+
+  redirectToPokemonDetails(pokemon: any) {
+    this.appComponent.navigateWithAnimation(`/pokemon-details/${pokemon.name}`, 'favorite-pokemons-page', 'pokemon-details-page');
   }
 
   sortPokemons(orderBy: string) {

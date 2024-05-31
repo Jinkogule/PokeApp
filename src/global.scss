@@ -186,6 +186,15 @@ ion-menu ion-content{
   color: rgb(192, 192, 65);
 }
 
+.button-voltar-a-pokedex{
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  font-size: 18px;
+  text-transform: capitalize;
+  --background: #488383;
+  margin: 20px;
+}
+
 .normal-type {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(168,168,120,1) 100%);
 }

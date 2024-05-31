@@ -80,5 +80,4 @@ export class PokemonDetailsComponent  implements OnInit {
   redirectToPokedex() {
     this.appComponent.navigateWithAnimation(`/`, 'pokemon-details-page', 'pokedex-page');
   }
-
 }
