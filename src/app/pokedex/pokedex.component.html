@@ -1,32 +1,32 @@
 <ion-content id="page-content">
-<div class="custom-container">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="4" *ngFor="let pokemon of pokemons">
-        <ion-card class="pokemon-card" [ngClass]="pokemon.types[0].type.name + '-type'">
-          <ion-card-header>
-            <ion-row style="justify-content: space-between;">
-              <ion-card-title class="card-title">{{ pokemon.name }}</ion-card-title>
-              <ion-button class="fav-button" fill="clear" (click)="isFavorite(pokemon) ? removeFromFavorites(pokemon) : addToFavorites(pokemon); $event.stopPropagation()" title="{{ isFavorite(pokemon) ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}">
-                <ion-icon slot="icon-only" [name]="isFavorite(pokemon) ? 'star' : 'star-outline'" [ngClass]="{'favorite': isFavorite(pokemon), 'star-icon': true}"></ion-icon>
-              </ion-button>
-            </ion-row>
-          </ion-card-header>
-          <ion-card-content class="card-content">
-            <div class="pokemon-card-img">
-              <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
+  <div class="custom-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="4" *ngFor="let pokemon of pokemons">
+          <ion-card class="pokemon-card" [ngClass]="pokemon.types[0].type.name + '-type'">
+            <ion-card-header>
+              <ion-row style="justify-content: space-between;">
+                <ion-card-title class="card-title" [ngClass]="pokemon.types[0].type.name + '-title-type'">{{ pokemon.name }}</ion-card-title>
+                <ion-button class="fav-button" fill="clear" (click)="isFavorite(pokemon) ? removeFromFavorites(pokemon) : addToFavorites(pokemon); $event.stopPropagation()" title="{{ isFavorite(pokemon) ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}">
+                  <ion-icon slot="icon-only" [name]="isFavorite(pokemon) ? 'star' : 'star-outline'" [ngClass]="{'favorite': isFavorite(pokemon), 'star-icon': true}"></ion-icon>
+                </ion-button>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content class="card-content">
+              <div class="pokemon-card-img">
+                <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
+              </div>
+              <div class="pokemon-description">
+                "{{ pokemon.description }}"
+              </div>
+            </ion-card-content>
+            <div class="button-details-container">
+              <ion-button class="button-details"(click)="redirectToPokemonDetails(pokemon)">Detalhes</ion-button>
             </div>
-            <div class="pokemon-description">
-              {{ pokemon.description }}
-            </div>
-          </ion-card-content>
-          <div class="button-details-container">
-            <ion-button class="button-details"(click)="redirectToPokemonDetails(pokemon)">Detalhes</ion-button>
-          </div>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-button class="button-more-pokemons" (click)="loadPokemons()">Ver mais pokémons</ion-button>
-</div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button class="button-more-pokemons" (click)="loadPokemons()">Ver mais pokémons</ion-button>
+  </div>
 </ion-content>

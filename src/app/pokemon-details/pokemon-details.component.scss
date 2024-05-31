@@ -1,15 +1,30 @@
-.card-details{
-  max-width: 1200px;
+.card-details {
+  max-width: 800px;
   margin: 0 auto;
-}
-
-.card-content{
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-transform: capitalize;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  color: #fff;
 }
-.pokemon-card-img{
-  width:500px;
+
+h1{
+  color: #dddddd;
+  font-weight: bold;
 }
+
+p{
+  font-size: 22px;
+  font-style: italic;
+}
+p.pokemon-description{
+  text-align: center;
+  font-size: 15px;
+}
+ion-card-header{
+  color: #fff;
+}
+
 ion-row.md{
   margin: 0;
   padding: 0;
@@ -18,4 +33,8 @@ ion-row.md{
 ion-col{
   margin: 0;
   padding: 0;
+}
+
+.type-image{
+  margin: 5px;
 }

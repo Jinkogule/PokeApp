@@ -4,6 +4,8 @@ import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
 import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
 import { map, mergeMap } from 'rxjs';
+import { addIcons } from 'ionicons';
+import { star, starOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -19,8 +21,11 @@ export class PokemonDetailsComponent  implements OnInit {
   pokemon: any;
   favorites: any[] = [];
   typeIds: number[] = [];
+  isDesktop: boolean = true;
 
-  constructor(private route: ActivatedRoute, private pokeApiService: PokeApiService) {}
+  constructor(private route: ActivatedRoute, private pokeApiService: PokeApiService) {
+    addIcons({ star, starOutline });
+  }
 
   ngOnInit() {
     this.loadDetails();
@@ -57,5 +62,17 @@ export class PokemonDetailsComponent  implements OnInit {
 
   isFavorite(pokemon: { name: any }) {
     return this.pokeApiService.isFavorite(pokemon);
+  }
+
+  checkScreenSize() {
+    const mediaQueryList = window.matchMedia('(min-width: 800px)');
+    this.handleScreenSizeChange(mediaQueryList);
+    mediaQueryList.addEventListener('change', () => {
+      this.handleScreenSizeChange(mediaQueryList);
+    });
+  }
+
+  handleScreenSizeChange(mediaQueryList: MediaQueryList) {
+    this.isDesktop = mediaQueryList.matches;
   }
 }

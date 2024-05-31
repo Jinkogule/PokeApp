@@ -107,6 +107,10 @@ ion-menu ion-content{
   margin: 20px auto;
 }
 
+.pokemon-description{
+  font-style: italic;
+}
+
 .card-title {
   text-transform: capitalize;
   color: #fff;
@@ -151,6 +155,8 @@ ion-menu ion-content{
   max-width: 1200px;
   margin: 0 auto;
   background-color: #425f5fb4;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 @media (max-width: 800px) {
@@ -258,4 +264,113 @@ ion-menu ion-content{
 
 .fairy-type {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(238,153,172,1) 100%);
+}
+
+
+.normal-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(168,168,120,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.fire-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(253,187,45,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.water-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(104,144,240,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.electric-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(248,208,48,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.grass-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(120,200,80,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.ice-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(152,216,216,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.fighting--titletype {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(192,48,40,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.poison--titletype {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(160,64,160,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.ground-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(224,192,104,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.flying-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(168,144,240,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.psychic-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(248,88,136,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bug-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(168,184,32,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.rock-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(184,160,56,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.ghost-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(112,88,152,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.dragon-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(112,56,248,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.dark-title-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(112,88,72,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.steel-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(184,184,208,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.fairy-title-type {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(238,153,172,1) 100%);
+  border-radius: 5px;
+  padding: 5px;
 }

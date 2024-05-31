@@ -1,53 +1,55 @@
-<ion-card class="card-details"*ngIf="pokemon" [ngClass]="pokemon.types[0].type.name + '-type'">
-  <ion-card-header>
-    <ion-row style="justify-content: space-between;">
-      <ion-card-title class="card-title">{{ pokemon.name }}</ion-card-title>
-      <ion-button class="fav-button" fill="clear" (click)="isFavorite(pokemon) ? removeFromFavorites(pokemon) : addToFavorites(pokemon); $event.stopPropagation()" title="{{ isFavorite(pokemon) ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}">
-        <ion-icon slot="icon-only" [name]="isFavorite(pokemon) ? 'star' : 'star-outline'" [ngClass]="{'favorite': isFavorite(pokemon), 'star-icon': true}"></ion-icon>
-      </ion-button>
-    </ion-row>
-    <div class="pokemon-description">
-      {{ pokemon.description }}
-    </div>
-  </ion-card-header>
-  <ion-card-content class="card-content">
-  <ion-row>
-    <ion-col>
-      <ion-row>
-        <ion-col>
-          <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <img class="sprites-img" [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" style="height: 100%;">
-        </ion-col>
-        <ion-col>
-          <img class="sprites-img" [src]="pokemon.sprites.back_default" alt="{{ pokemon.name }}" style="height: 100%;">
-        </ion-col>
-        <ion-col>
-          <img class="sprites-img" [src]="pokemon.sprites.front_shiny" alt="{{ pokemon.name }}" style="height: 100%;">
-        </ion-col>
-        <ion-col>
-          <img class="sprites-img" [src]="pokemon.sprites.back_shiny" alt="{{ pokemon.name }}" style="height: 100%;">
-        </ion-col>
-      </ion-row>
-    </ion-col>
-    <ion-col>
-      <h1>Atributos:</h1>
-        <p *ngFor="let stat of pokemon.stats">
-          {{ stat.stat.name }}: {{ stat.base_stat }}
-        </p>
-        Height: {{pokemon.height}}<br>
-        Weight: {{pokemon.weight}}<br>
-    </ion-col>
-  </ion-row>
-
-        <ion-row  style="justify-content: start;">
-          <ion-col *ngFor="let typeId of typeIds">
-            <img class="type-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/legends-arceus/{{ typeId }}.png">
-          </ion-col>
-        </ion-row>
-
-  </ion-card-content>
-</ion-card>
+<ion-content id="page-content">
+  <div class="custom-container">
+    <ion-grid>
+      <ion-card class="card-details"*ngIf="pokemon" [ngClass]="pokemon.types[0].type.name + '-type'">
+        <ion-card-header>
+          <ion-row style="justify-content: space-between;">
+             <ion-card-title class="card-title" [ngClass]="pokemon.types[0].type.name + '-title-type'">{{ pokemon.name }}</ion-card-title>
+            <ion-button class="fav-button" fill="clear" (click)="isFavorite(pokemon) ? removeFromFavorites(pokemon) : addToFavorites(pokemon); $event.stopPropagation()" title="{{ isFavorite(pokemon) ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}">
+              <ion-icon slot="icon-only" [name]="isFavorite(pokemon) ? 'star' : 'star-outline'" [ngClass]="{'favorite': isFavorite(pokemon), 'star-icon': true}"></ion-icon>
+            </ion-button>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col [size]="isDesktop ? 'auto' : '12'">
+              <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default"></ion-img>
+              <ion-row>
+                <ion-col>
+                  <img class="sprites-img" [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" style="height: 100%;">
+                </ion-col>
+                <ion-col>
+                  <img class="sprites-img" [src]="pokemon.sprites.back_default" alt="{{ pokemon.name }}" style="height: 100%;">
+                </ion-col>
+                <ion-col>
+                  <img class="sprites-img" [src]="pokemon.sprites.front_shiny" alt="{{ pokemon.name }}" style="height: 100%;">
+                </ion-col>
+                <ion-col>
+                  <img class="sprites-img" [src]="pokemon.sprites.back_shiny" alt="{{ pokemon.name }}" style="height: 100%;">
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <h1>Attributes:</h1>
+              <p *ngFor="let stat of pokemon.stats">
+                {{ stat.stat.name }}: {{ stat.base_stat }}
+              </p>
+              <br>
+              <h1>Other informations:</h1>
+              <p>Height: {{pokemon.height}}<br></p>
+              <p>Weight: {{pokemon.weight}}<br></p>
+              <br>
+              <h1>Types:</h1>
+              <ion-col *ngFor="let typeId of typeIds">
+                <img class="type-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/legends-arceus/{{ typeId }}.png">
+              </ion-col>
+            </ion-col>
+          </ion-row>
+          <p class="pokemon-description">
+            "{{ pokemon.description }}"
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </div>
+</ion-content>
