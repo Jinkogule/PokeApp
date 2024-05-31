@@ -8,8 +8,10 @@ import { map, mergeMap, toArray } from 'rxjs/operators';
 })
 export class PokeApiService {
   private baseUrl = 'https://pokeapi.co/api/v2';
-
-  constructor(private http: HttpClient) { }
+  favorites: any[] = [];
+  constructor(private http: HttpClient) {
+    this.loadFavoritesFromLocalStorage();
+  }
 
   getPokemon(name: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/pokemon/${name}`);
@@ -41,5 +43,38 @@ export class PokeApiService {
       map(({ details, description }) => ({ ...details, description })),
       toArray()
     );
+  }
+
+  getTypeIdsByNames(typeNames: string[]): Observable<number[]> {
+    const requests: Observable<any>[] = [];
+    for (const typeName of typeNames) {
+      requests.push(this.http.get(`${this.baseUrl}/type/${typeName}`).pipe(map((typeData: any) => typeData.id)));
+    }
+    return forkJoin(requests);
+  }
+
+  addToFavorites(pokemon: any) {
+    this.favorites.push(pokemon);
+    this.saveFavoritesToLocalStorage();
+  }
+
+  removeFromFavorites(pokemon: { name: any }) {
+    this.favorites = this.favorites.filter(fav => fav.name !== pokemon.name);
+    this.saveFavoritesToLocalStorage();
+  }
+
+  isFavorite(pokemon: { name: any }) {
+    return this.favorites.some(fav => fav.name === pokemon.name);
+  }
+
+  private loadFavoritesFromLocalStorage() {
+    const storedFavorites = localStorage.getItem('favorites');
+    if (storedFavorites) {
+      this.favorites = JSON.parse(storedFavorites);
+    }
+  }
+
+  private saveFavoritesToLocalStorage() {
+    localStorage.setItem('favorites', JSON.stringify(this.favorites));
   }
 }

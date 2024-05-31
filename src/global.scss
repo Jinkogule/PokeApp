@@ -171,6 +171,23 @@ ion-menu ion-content{
   --background: #488383;
 }
 
+.fav-button{
+  left: 0;
+  color: rgb(160, 160, 54);
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.star-icon {
+  color: gray;
+
+}
+
+.star-icon.favorite {
+  color: rgb(192, 192, 65);
+}
+
 .normal-type {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(168,168,120,1) 100%);
 }
