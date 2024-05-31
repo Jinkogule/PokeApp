@@ -87,4 +87,4 @@ A aplicação foi projetada para ser responsiva, utilizando Ion UI Components e 
 
 ## Demonstração de Usabilidade
 
-[Demonstração em Vídeo](https://www.youtube.com/watch?v=ID_DO_VIDEO)
+[Demonstração em Vídeo](https://youtu.be/wu38jSbT2aI)
