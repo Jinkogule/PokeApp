@@ -14,10 +14,6 @@ import { RouterOutlet } from '@angular/router';
   ],
 })
 export class AppComponent {
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
-
   constructor(private navCtrl: NavController, private animationCtrl: AnimationController) {}
 
   async navigateWithAnimation(path: string, fromPageId: string, toPageId: string) {
@@ -45,5 +41,13 @@ export class AppComponent {
         await fadeIn.play();
       }
     }
+  }
+
+  redirectToFavoritePokemons() {
+    this.navigateWithAnimation(`/favorite-pokemons`, 'pokedex-page', 'favorite-pokemons-page');
+  }
+
+  redirectToPokedex() {
+    this.navigateWithAnimation(`/`, 'favorite-pokemons-page', 'pokedex-page');
   }
 }
