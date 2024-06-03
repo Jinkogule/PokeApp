@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable, BehaviorSubject, forkJoin } from 'rxjs';
 import { map, mergeMap, toArray } from 'rxjs/operators';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokeApiService {
   private baseUrl = 'https://pokeapi.co/api/v2';
-  favorites: any[] = [];
-  constructor(private http: HttpClient) {
+  private favoritesSubject = new BehaviorSubject<any[]>([]);
+  favorites$ = this.favoritesSubject.asObservable();
+
+  constructor(private http: HttpClient, private notificationService: NotificationService) {
     this.loadFavoritesFromLocalStorage();
   }
 
@@ -53,28 +56,40 @@ export class PokeApiService {
     return forkJoin(requests);
   }
 
+  private loadFavoritesFromLocalStorage() {
+    const storedFavorites = localStorage.getItem('favorites');
+    const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+    this.favoritesSubject.next(favorites);
+  }
+
+  private saveFavoritesToLocalStorage(favorites: any[]) {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    this.favoritesSubject.next(favorites);
+  }
+
   addToFavorites(pokemon: any) {
-    this.favorites.push(pokemon);
-    this.saveFavoritesToLocalStorage();
+    const favorites = [...this.favoritesSubject.value, pokemon];
+    this.saveFavoritesToLocalStorage(favorites);
+    const capitalizedPokemonName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    this.notificationService.showSuccess(`${capitalizedPokemonName} foi adicionado aos favoritos`);
   }
 
   removeFromFavorites(pokemon: { name: any }) {
-    this.favorites = this.favorites.filter(fav => fav.name !== pokemon.name);
-    this.saveFavoritesToLocalStorage();
+    const favorites = this.favoritesSubject.value.filter(fav => fav.name !== pokemon.name);
+    this.saveFavoritesToLocalStorage(favorites);
+    const capitalizedPokemonName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    this.notificationService.showSuccess(`${capitalizedPokemonName} foi removido dos favoritos`);
   }
 
-  isFavorite(pokemon: { name: any }) {
-    return this.favorites.some(fav => fav.name === pokemon.name);
+  isFavorite(pokemon: { name: any }): boolean {
+    return this.favoritesSubject.value.some(fav => fav.name === pokemon.name);
   }
 
-  private loadFavoritesFromLocalStorage() {
-    const storedFavorites = localStorage.getItem('favorites');
-    if (storedFavorites) {
-      this.favorites = JSON.parse(storedFavorites);
+  toggleFavorite(pokemon: any) {
+    if (this.isFavorite(pokemon)) {
+      this.removeFromFavorites(pokemon);
+    } else {
+      this.addToFavorites(pokemon);
     }
-  }
-
-  private saveFavoritesToLocalStorage() {
-    localStorage.setItem('favorites', JSON.stringify(this.favorites));
   }
 }

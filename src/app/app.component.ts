@@ -1,7 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { NavController, AnimationController } from '@ionic/angular';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,18 @@ import { RouterOutlet } from '@angular/router';
     CUSTOM_ELEMENTS_SCHEMA
   ],
 })
-export class AppComponent {
-  constructor(private navCtrl: NavController, private animationCtrl: AnimationController) {}
+export class AppComponent implements OnInit {
+  currentPageId: string = 'default-page-id';
+
+  constructor(private router: Router, private animationCtrl: AnimationController, private navCtrl: NavController) {}
+
+  ngOnInit() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.updateCurrentPageId();
+    });
+  }
 
   async navigateWithAnimation(path: string, fromPageId: string, toPageId: string) {
     const element = document.querySelector<HTMLElement>(`#${fromPageId}`);
@@ -29,7 +40,6 @@ export class AppComponent {
       await this.navCtrl.navigateForward(path);
 
       const newElement = document.querySelector<HTMLElement>(`#${toPageId}`);
-
       if (newElement) {
         newElement.style.opacity = '0';
         const fadeIn = this.animationCtrl
@@ -43,11 +53,24 @@ export class AppComponent {
     }
   }
 
-  redirectToFavoritePokemons() {
-    this.navigateWithAnimation(`/favorite-pokemons`, 'pokedex-page', 'favorite-pokemons-page');
+  updateCurrentPageId() {
+    const currentUrl = this.router.url;
+    if (currentUrl === '/') {
+      this.currentPageId = 'pokedex-page';
+    } else if (currentUrl.startsWith('/pokemon-details')) {
+      this.currentPageId = 'pokemon-details-page';
+    } else if (currentUrl === '/favorite-pokemons') {
+      this.currentPageId = 'favorite-pokemons-page';
+    } else {
+      this.currentPageId = 'default-page-id';
+    }
   }
 
   redirectToPokedex() {
-    this.navigateWithAnimation(`/`, 'favorite-pokemons-page', 'pokedex-page');
+    this.navigateWithAnimation('/', this.currentPageId, 'pokedex-page');
+  }
+
+  redirectToFavoritePokemons() {
+    this.navigateWithAnimation('/favorite-pokemons', this.currentPageId, 'favorite-pokemons-page');
   }
 }

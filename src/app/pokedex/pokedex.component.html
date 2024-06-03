@@ -7,7 +7,7 @@
             <ion-card-header>
               <ion-row style="justify-content: space-between;">
                 <ion-card-title class="card-title" [ngClass]="pokemon.types[0].type.name + '-title-type'">{{ pokemon.name }}</ion-card-title>
-                <ion-button class="fav-button" fill="clear" (click)="isFavorite(pokemon) ? removeFromFavorites(pokemon) : addToFavorites(pokemon); $event.stopPropagation()" title="{{ isFavorite(pokemon) ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}">
+                <ion-button class="fav-button" fill="clear" (click)="toggleFavorite(pokemon);" title="{{ isFavorite(pokemon) ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}">
                   <ion-icon slot="icon-only" [name]="isFavorite(pokemon) ? 'star' : 'star-outline'" [ngClass]="{'favorite': isFavorite(pokemon), 'star-icon': true}"></ion-icon>
                 </ion-button>
               </ion-row>

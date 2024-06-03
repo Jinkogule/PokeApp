@@ -358,7 +358,7 @@ ion-menu ion-content{
   padding: 5px;
 }
 
-.dark-title-title-type {
+.dark-title-type {
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(112,88,72,1) 100%);
   border-radius: 5px;
   padding: 5px;
@@ -374,4 +374,20 @@ ion-menu ion-content{
   background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(238,153,172,1) 100%);
   border-radius: 5px;
   padding: 5px;
+}
+
+::ng-deep snack-bar-container.snackbar-success {
+  top: 50px;
+  color: green; /* Ajuste a posição vertical conforme necessário */
+}
+
+
+.addToFavoritesNotification {
+  --mdc-snackbar-container-color: #488383bb;
+  --mat-snack-bar-button-color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+}
+.cdk-overlay-pane{
+  margin-top: 50px !important;
 }

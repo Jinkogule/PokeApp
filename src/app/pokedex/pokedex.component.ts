@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
@@ -6,17 +6,18 @@ import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ioni
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
 import { AppComponent } from '../app.component';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
   styleUrls: ['./pokedex.component.scss'],
   imports: [CommonModule, IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent],
-  providers: [HttpClient, PokeApiService],
+  providers: [HttpClient, NotificationService],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class PokedexComponent {
+export class PokedexComponent implements OnInit {
   pokemons: any[] = [];
   limit = 12;
   offset = 0;
@@ -27,8 +28,9 @@ export class PokedexComponent {
   }
 
   ngOnInit() {
-    const favorites = localStorage.getItem('favorites');
-    this.favorites = favorites ? JSON.parse(favorites) : [];
+    this.pokeApiService.favorites$.subscribe(favorites => {
+      this.favorites = favorites;
+    });
     this.loadPokemons();
   }
 
@@ -40,18 +42,12 @@ export class PokedexComponent {
     });
   }
 
-  addToFavorites(pokemon: any) {
-    this.favorites.push(pokemon);
-    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+  isFavorite(pokemon: { name: any }) {
+    return this.pokeApiService.isFavorite(pokemon);
   }
 
-  removeFromFavorites(pokemon: { name: any; }) {
-    this.favorites = this.favorites.filter(fav => fav.name !== pokemon.name);
-    localStorage.setItem('favorites', JSON.stringify(this.favorites));
-  }
-
-  isFavorite(pokemon: { name: any; }) {
-    return this.favorites.some(fav => fav.name === pokemon.name);
+  toggleFavorite(pokemon: any) {
+    this.pokeApiService.toggleFavorite(pokemon);
   }
 
   redirectToPokemonDetails(pokemon: any) {

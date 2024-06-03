@@ -1,4 +1,4 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
@@ -13,22 +13,29 @@ import { AppComponent } from '../app.component';
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss'],
   imports: [CommonModule, IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent],
+  providers: [PokeApiService],
   standalone: true,
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
 })
-export class PokemonDetailsComponent  implements OnInit {
+export class PokemonDetailsComponent implements OnInit {
   pokemon: any;
-  favorites: any[] = [];
   typeIds: number[] = [];
   isDesktop: boolean = true;
-
-  constructor(private route: ActivatedRoute, private pokeApiService: PokeApiService, private appComponent: AppComponent) {
+  favorites: any[] = [];
+  constructor(
+    private route: ActivatedRoute,
+    private pokeApiService: PokeApiService,
+    private appComponent: AppComponent
+  ) {
     addIcons({ star, starOutline });
   }
 
   ngOnInit() {
+    this.pokeApiService.favorites$.subscribe(favorites => {
+      this.favorites = favorites;
+    });
     this.loadDetails();
   }
 
@@ -53,16 +60,12 @@ export class PokemonDetailsComponent  implements OnInit {
     }
   }
 
-  addToFavorites(pokemon: any) {
-    this.pokeApiService.addToFavorites(pokemon);
-  }
-
-  removeFromFavorites(pokemon: { name: any }) {
-    this.pokeApiService.removeFromFavorites(pokemon);
-  }
-
   isFavorite(pokemon: { name: any }) {
     return this.pokeApiService.isFavorite(pokemon);
+  }
+
+  toggleFavorite(pokemon: any) {
+    this.pokeApiService.toggleFavorite(pokemon);
   }
 
   checkScreenSize() {

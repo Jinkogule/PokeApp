@@ -26,8 +26,6 @@ export class FavoritePokemonsComponent {
   }
 
   ngOnInit() {
-    const favorites = localStorage.getItem('favorites');
-    this.favorites = favorites ? JSON.parse(favorites) : [];
     this.loadFavoritePokemons();
   }
 
@@ -50,10 +48,6 @@ export class FavoritePokemonsComponent {
             }
         );
     });
-  }
-
-  isFavorite(pokemon: { name: any; }) {
-    return this.favorites.some(fav => fav.name === pokemon.name);
   }
 
   redirectToPokedex() {
