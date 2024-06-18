@@ -376,12 +376,6 @@ ion-menu ion-content{
   padding: 5px;
 }
 
-::ng-deep snack-bar-container.snackbar-success {
-  top: 50px;
-  color: green; /* Ajuste a posição vertical conforme necessário */
-}
-
-
 .addToFavoritesNotification {
   --mdc-snackbar-container-color: #488383bb;
   --mat-snack-bar-button-color: #ffffff;
