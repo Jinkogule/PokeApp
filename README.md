@@ -1,55 +1,67 @@
-# PokeApp
+<div align="center">
+<img style="" src="https://github.com/Jinkogule/PokeApp/blob/main/src/assets/images/pokeapp-logo.png" width="250px;" alt=""/>
+
+<br>
 
 [![Release](https://img.shields.io/github/v/release/Jinkogule/PokeApp?style=for-the-badge)](https://github.com/Jinkogule/PokeApp/releases)
+[![Netlify](https://img.shields.io/netlify/7481926e-a6c5-449d-a47e-907874451c26?style=for-the-badge)](https://app.netlify.com/sites/pokedexcatalog/deploys)
 [![License](https://img.shields.io/github/license/Jinkogule/PokeApp?style=for-the-badge)](LICENSE)<br>
 ![Status](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO%20|%20EM%20ATUALIZAÇÃO-brightgreen?style=for-the-badge)
+</div>
+
+<p align="center">
+ <a href="#-sobre-o-projeto">Sobre</a> •
+ <a href="#-documentação">Documentação</a> • 
+ <a href="#-desenvolvimento">Desenvolvimento</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#-layout">Layout</a> • 
+ <a href="#-autor">Autor</a> • 
+ <a href="#-licença">Licença</a>
+</p>
+
+---
+
+## 💻 Sobre o projeto
 
 O **PokeApp** é uma Pokédex com uma página principal exibindo uma lista de pokémons que podem ser marcados como favoritos. Há uma tela de detalhes para cada pokémon, acessível através de seus respectivos cards na Pokédex. Também há uma página que mostra apenas os pokémons marcados como favoritos.
 
-## Tecnologias Utilizadas
+Projeto disponível em: https://main--pokedexcatalog.netlify.app/.
 
-- **Angular**
-- **Ionic**
-- **PokeAPI**
+## 📋 Documentação
 
-## Arquitetura e Design
+-   **[Wiki](https://github.com/Jinkogule/PokeApp/wiki)**
 
-Este projeto foi desenvolvido utilizando Angular e Ionic, seguindo uma arquitetura modular e componentizada. A seguir, algumas características e decisões de design que guiaram a implementação:
+## 🧑🏻‍💻 Desenvolvimento
 
-### Componentização
+-   **[Código fonte](https://github.com/Jinkogule/PokeApp)**
+-   **[Issue Tracking](https://github.com/Jinkogule/PokeApp/issues)**
 
-Cada funcionalidade principal foi encapsulada em componentes específicos, garantindo que cada parte do código seja responsável por uma única funcionalidade, facilitando a manutenção e a escalabilidade do projeto.
+## 🛠 Tecnologias
 
-### Carregamento sob demanda
+#### **Website**  ([Angular](https://www.php.net/)  +  [Ionic](https://laravel.com/))
 
-Utilizei lazy loading para carregar os componentes e módulos apenas quando necessários. Dessa forma, a aplicação carrega mais rapidamente e utiliza menos recursos, melhorando a experiência do usuário.
+-   **[Angular 18.1.2](https://angular.dev/)**
+-   **[Ionic 7.2.0](https://ionicframework.com/)**
+-   **[Node 20.15.1](https://nodejs.org/)**
 
-### Standalone Components
+> Para mais detalhes sobre as configurações do projeto, veja os arquivos [angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json), [package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json), [tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json) e [ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json).
 
-Optei por utilizar standalone components, simplificando a estrutura do projeto e melhorando a legibilidade do código, tornando a aplicação mais modular e fácil de entender.
+#### **Hospedagem**
 
-### Estrutura Básica
+-   **[Netlify](https://app.netlify.com/)**
 
-A estrutura básica do projeto, que inclui componentes essenciais como o cabeçalho e o menu de navegação, está sempre presente. Outros componentes são carregados dinamicamente conforme necessário.
+#### **Serviços**
 
-### Consumo da PokeAPI
+-   **[PokeAPI](https://pokeapi.co/)**
 
-A aplicação consome a API [PokeAPI](https://pokeapi.co/) para obter as informações dos pokémons. Isso é feito através de um serviço dedicado, que lida com todas as requisições HTTP e fornece os dados necessários para os componentes.
+#### **Utilitários**
 
-### Estilo de Codificação
+-   Ícones:  **[Flaticon](https://www.flaticon.com/)**
+-   Fontes:  **[Bahnschrift](https://learn.microsoft.com/en-us/typography/font-list/bahnschrift)**
 
-Segui boas práticas de codificação, utilizando TypeScript para garantir tipagem estática, e adotando padrões como DRY para evitar repetição de código, mantendo em um componente principal, ou no serviço dedicado à PokeAPI, os códigos que são utilizados em mais de um componente.
+## 🎨 Layout
 
-### Padrões de Design
-
-Utilizei o padrão de design de injeção de dependência fornecido pelo Angular, facilitando a substituição e troca de serviços sem modificar os componentes que os utilizam.
-
-### Responsividade
-
-A aplicação foi projetada para ser responsiva, utilizando Ion UI Components e SCSS para garantir uma boa experiência em dispositivos móveis e desktops.
-
-## Capturas de Tela
-
+### Telas da aplicação
 <table>
   <tr>
     <td align="center">
@@ -89,6 +101,17 @@ A aplicação foi projetada para ser responsiva, utilizando Ion UI Components e 
   </tr>
 </table>
 
-## Demonstração de Usabilidade
+## 📝 Autor
 
-[Demonstração em Vídeo](https://youtu.be/wu38jSbT2aI)
+<a href="">
+ <img border-radius="50%" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/52849575?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Lucas Pimenta</b></sub></a> <a href="https://lucas-pimenta-3c80fa16439e.herokuapp.com/" title="Lucas Pimenta"></a>
+ <br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Lucas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-pimenta-0663671b1/)](https://www.linkedin.com/in/lucas-pimenta-0663671b1/) 
+[![Gmail Badge](https://img.shields.io/badge/-lucaspimenta21@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lucaspimenta21@gmail.com)](mailto:lucaspimenta21@gmail.com)
+
+## 📝 Licença
+
+Este projeto está sob a licença [MIT](./LICENSE).
