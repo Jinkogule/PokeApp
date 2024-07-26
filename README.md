@@ -5,7 +5,7 @@
 
 [![Release](https://img.shields.io/github/v/release/Jinkogule/PokeApp?style=for-the-badge)](https://github.com/Jinkogule/PokeApp/releases)
 [![Netlify](https://img.shields.io/netlify/7481926e-a6c5-449d-a47e-907874451c26?style=for-the-badge)](https://app.netlify.com/sites/pokedexcatalog/deploys)
-[![GitHub License](https://img.shields.io/github/license/Jinkogule/PokeApp?style=for-the-badge)](LICENSE)<br>
+[![License](https://img.shields.io/github/license/Jinkogule/pokeapp?style=for-the-badge)](LICENSE)<br>
 ![Status](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO%20|%20EM%20ATUALIZAÇÃO-brightgreen?style=for-the-badge)
 </div>
 
