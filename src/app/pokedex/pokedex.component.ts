@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
-import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonButton, IonIcon, IonCardContent, IonImg} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
 import { AppComponent } from '../app.component';
@@ -12,7 +12,7 @@ import { NotificationService } from '../services/notification.service';
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
   styleUrls: ['./pokedex.component.scss'],
-  imports: [CommonModule, IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent],
+  imports: [CommonModule, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonButton, IonIcon, IonCardContent, IonImg],
   providers: [HttpClient, NotificationService],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

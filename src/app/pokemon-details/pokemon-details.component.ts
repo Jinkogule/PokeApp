@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeApiService } from '../services/poke-api.service';
 import { CommonModule } from '@angular/common';
-import { IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonImg, IonIcon } from '@ionic/angular/standalone';
 import { map, mergeMap } from 'rxjs';
 import { addIcons } from 'ionicons';
 import { star, starOutline } from 'ionicons/icons';
@@ -12,7 +12,7 @@ import { AppComponent } from '../app.component';
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss'],
-  imports: [CommonModule, IonApp, IonRouterOutlet, IonHeader, IonFooter, IonContent],
+  imports: [CommonModule, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonImg, IonIcon],
   providers: [PokeApiService],
   standalone: true,
   schemas: [

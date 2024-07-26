@@ -3,12 +3,14 @@ import { IonicModule } from '@ionic/angular';
 import { NavController, AnimationController } from '@ionic/angular';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { IonApp, IonHeader, IonToolbar, IonImg, IonContent, IonList, IonMenuToggle, IonItem, IonLabel, IonMenuButton, IonFooter, IonMenu } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [IonicModule, RouterOutlet],
+  imports: [ CommonModule, IonicModule, RouterOutlet, IonApp, IonHeader, IonToolbar, IonImg, IonContent, IonList, IonMenuToggle, IonItem, IonLabel, IonMenuButton, IonFooter, IonMenu ],
   standalone: true,
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
