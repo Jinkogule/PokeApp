@@ -1,5 +1,9 @@
 # PokeApp
 
+[![Release](https://img.shields.io/github/v/release/Jinkogule/PokeApp?style=for-the-badge)](https://github.com/Jinkogule/PokeApp/releases)
+[![License](https://img.shields.io/github/license/Jinkogule/PokeApp?style=for-the-badge)](LICENSE)<br>
+![Status](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO%20|%20EM%20ATUALIZAÇÃO-brightgreen?style=for-the-badge)
+
 O **PokeApp** é uma Pokédex com uma página principal exibindo uma lista de pokémons que podem ser marcados como favoritos. Há uma tela de detalhes para cada pokémon, acessível através de seus respectivos cards na Pokédex. Também há uma página que mostra apenas os pokémons marcados como favoritos.
 
 ## Tecnologias Utilizadas
