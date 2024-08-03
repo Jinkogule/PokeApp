@@ -23,7 +23,7 @@
 
 ## 💻 Sobre o projeto
 
-O **PokeApp** é uma Pokédex com uma página principal exibindo uma lista de pokémons que podem ser marcados como favoritos. Há uma tela de detalhes para cada pokémon, acessível através de seus respectivos cards na Pokédex. Também há uma página que mostra apenas os pokémons marcados como favoritos.
+O PokeApp é um aplicativo inspirado na franquia Pokémon. Ele funciona como uma enciclopédia virtual, chamada Pokédex, onde você pode explorar informações sobre diversos Pokémon. A página principal do aplicativo exibe uma lista de Pokémon que você pode marcar como favoritos. Cada Pokémon tem uma tela de detalhes acessível através de seus respectivos cards na Pokédex, onde você pode ver informações como tipo, habilidades e outros detalhes interessantes. Além disso, o aplicativo possui uma página dedicada apenas aos Pokémon que você marcou como favoritos, permitindo fácil acesso aos seus preferidos.
 
 Projeto disponível em: https://main--pokedexcatalog.netlify.app/.
 
@@ -52,7 +52,7 @@ Projeto disponível em: https://main--pokedexcatalog.netlify.app/.
 
 #### **Serviços**
 
--   **[PokeAPI](https://pokeapi.co/)**
+-   **[PokeAPI](https://platform.openai.com/docs/overview)**
 
 ## 🎨 Layout
 
@@ -98,13 +98,9 @@ Projeto disponível em: https://main--pokedexcatalog.netlify.app/.
 
 ## 📝 Autor
 
-<a href="">
- <img border-radius="50%" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/52849575?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Lucas Pimenta</b></sub></a> <a href="https://lucas-pimenta-3c80fa16439e.herokuapp.com/" title="Lucas Pimenta"></a>
- <br />
+<img src="https://avatars.githubusercontent.com/u/52849575?v=4" width="100px;" alt=""/>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Lucas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-pimenta-0663671b1/)](https://www.linkedin.com/in/lucas-pimenta-0663671b1/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Lucas%20Pimenta-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-pimenta-0663671b1/)](https://www.linkedin.com/in/lucas-pimenta-0663671b1/) 
 [![Gmail Badge](https://img.shields.io/badge/-lucaspimenta21@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lucaspimenta21@gmail.com)](mailto:lucaspimenta21@gmail.com)
 
 ## 📝 Licença
