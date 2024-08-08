@@ -96,7 +96,7 @@ Projeto disponível em: https://pokedexcatalog.netlify.app/.
   </tr>
 </table>
 
-## 📝 Autor
+## ✒ Autor
 
 <img src="https://avatars.githubusercontent.com/u/52849575?v=4" width="100px;" alt=""/>
 
