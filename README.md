@@ -25,7 +25,7 @@
 
 O PokeApp é um aplicativo inspirado na franquia Pokémon. Ele funciona como uma enciclopédia virtual, chamada Pokédex, onde você pode explorar informações sobre diversos Pokémon. A página principal do aplicativo exibe uma lista de Pokémon que você pode marcar como favoritos. Cada Pokémon tem uma tela de detalhes acessível através de seus respectivos cards na Pokédex, onde você pode ver informações como tipo, habilidades e outros detalhes interessantes. Além disso, o aplicativo possui uma página dedicada apenas aos Pokémon que você marcou como favoritos, permitindo fácil acesso aos seus preferidos.
 
-Projeto disponível em: https://pokedexcatalog.netlify.app/.
+Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
 
 ## 📋 Documentação
 
@@ -38,19 +38,19 @@ Projeto disponível em: https://pokedexcatalog.netlify.app/.
 
 ## 🛠 Tecnologias
 
-#### **Website**  ([Angular](https://www.php.net/)  +  [Ionic](https://laravel.com/))
+### **Website**  **([Angular](https://www.php.net/)**  +  **[Ionic](https://laravel.com/))**
 
 -   **[Angular 18.1.2](https://angular.dev/)**
 -   **[Ionic 7.2.0](https://ionicframework.com/)**
 -   **[Node 20.15.1](https://nodejs.org/)**
 
-> Para mais detalhes sobre as configurações do projeto, veja os arquivos [angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json), [package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json), [tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json) e [ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json).
+> Para mais detalhes sobre as configurações do projeto, veja os arquivos **[angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json)**, **[package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json)**, **[tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json)** e **[ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json)**.
 
-#### **Hospedagem**
+### **Hospedagem**
 
--   **[Netlify](https://app.netlify.com/)**
+-   **[Netlify](https://app.netlify.com/)** → **[PokeApp](https://pokedexcatalog.netlify.app/)**
 
-#### **Serviços**
+### **Serviços**
 
 -   **[PokeAPI](https://platform.openai.com/docs/overview)**
 
@@ -98,11 +98,22 @@ Projeto disponível em: https://pokedexcatalog.netlify.app/.
 
 ## ✒ Autor
 
-<img src="https://avatars.githubusercontent.com/u/52849575?v=4" width="100px;" alt=""/>
-
-[![Linkedin Badge](https://img.shields.io/badge/-Lucas%20Pimenta-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-pimenta-0663671b1/)](https://www.linkedin.com/in/lucas-pimenta-0663671b1/) 
-[![Gmail Badge](https://img.shields.io/badge/-lucaspimenta21@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lucaspimenta21@gmail.com)](mailto:lucaspimenta21@gmail.com)
+<table>
+  <tr>
+    <td align="center">
+      Lucas Pimenta
+      <br>
+      <a href="https://github.com/Jinkogule">
+        <img src="https://avatars.githubusercontent.com/u/52849575?v=4" width="100px;" alt="Lucas Pimenta"/>
+      </a>
+      <br>
+      <a href="https://github.com/Jinkogule">
+        <img src="https://img.shields.io/badge/-Github-black?style=flat-square&logo=Github&logoColor=white">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## 📝 Licença
 
-Este projeto está sob a licença [MIT](./LICENSE).
+Este projeto está sob a licença **[MIT](./LICENSE)**.
