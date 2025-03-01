@@ -23,7 +23,7 @@
 
 ## 💻 Sobre o projeto
 
-O PokeApp é um aplicativo inspirado na franquia Pokémon. Ele funciona como uma enciclopédia virtual, chamada Pokédex, onde você pode explorar informações sobre diversos Pokémon. A página principal do aplicativo exibe uma lista de Pokémon que você pode marcar como favoritos. Cada Pokémon tem uma tela de detalhes acessível através de seus respectivos cards na Pokédex, onde você pode ver informações como tipo, habilidades e outros detalhes interessantes. Além disso, o aplicativo possui uma página dedicada apenas aos Pokémon que você marcou como favoritos, permitindo fácil acesso aos seus preferidos.
+O PokeApp é uma Pokédex com uma página principal exibindo uma lista de Pokémon que podem ser marcados como favoritos. Ele funciona como uma enciclopédia virtual, onde você pode explorar informações sobre diversos Pokémon. Cada Pokémon tem uma tela de detalhes acessível através de seus respectivos cards na Pokédex, onde você pode ver informações como tipo, habilidades e outros detalhes interessantes. Além disso, o aplicativo possui uma página dedicada apenas aos Pokémon que você marcou como favoritos, permitindo fácil acesso aos seus preferidos.
 
 Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
 
