@@ -50,7 +50,7 @@ Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
 
 -   **[Netlify](https://app.netlify.com/)** → **[PokeApp](https://pokedexcatalog.netlify.app/)**
 
-### **Serviços**
+### **Serviços e Add-ons**
 
 -   **[PokeAPI](https://platform.openai.com/docs/overview)**
 
