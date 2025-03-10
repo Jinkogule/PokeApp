@@ -1,6 +1,5 @@
 <div align="center">
 <img style="" src="https://github.com/Jinkogule/PokeApp/blob/main/src/assets/images/pokeapp-logo.png" width="250px;" alt=""/>
-
 <br>
 
 [![Release](https://img.shields.io/github/v/release/Jinkogule/PokeApp?style=for-the-badge)](https://github.com/Jinkogule/PokeApp/releases)
@@ -10,13 +9,13 @@
 </div>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-documentação">Documentação</a> • 
- <a href="#-desenvolvimento">Desenvolvimento</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-layout">Layout</a> • 
- <a href="#-autor">Autor</a> • 
- <a href="#-licença">Licença</a>
+  <a href="#-sobre-o-projeto">Sobre</a> •
+  <a href="#-documentação">Documentação</a> • 
+  <a href="#-desenvolvimento">Desenvolvimento</a> • 
+  <a href="#-tecnologias">Tecnologias</a> • 
+  <a href="#-layout">Layout</a> • 
+  <a href="#-autor">Autor</a> • 
+  <a href="#-licença">Licença</a>
   <br>
   <a href="./README.pt.md">Português (BR)</a> •
   <a href="./README.md">English</a>
