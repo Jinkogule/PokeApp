@@ -46,7 +46,7 @@ Project available at: **https://pokedexcatalog.netlify.app/**.
 -   **[Ionic 7.2.0](https://ionicframework.com/)**
 -   **[Node 20.15.1](https://nodejs.org/)**
 
-> For more details about project configurations, check the files **[angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json)**, **[package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json)**, **[tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json)** and **[ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json)**.
+> For more details about project configurations, see **[angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json)**, **[package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json)**, **[tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json)** and **[ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json)**.
 
 ### **Hosting**
 
