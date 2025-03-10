@@ -1,42 +1,41 @@
 <div align="center">
 <img style="" src="https://github.com/Jinkogule/PokeApp/blob/main/src/assets/images/pokeapp-logo.png" width="250px;" alt=""/>
-
 <br>
 
 [![Release](https://img.shields.io/github/v/release/Jinkogule/PokeApp?style=for-the-badge)](https://github.com/Jinkogule/PokeApp/releases)
 [![Netlify](https://img.shields.io/netlify/7481926e-a6c5-449d-a47e-907874451c26?style=for-the-badge)](https://app.netlify.com/sites/pokedexcatalog/deploys)
 [![License](https://img.shields.io/github/license/Jinkogule/pokeapp?style=for-the-badge)](LICENSE)<br>
-![Status](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO%20|%20EM%20ATUALIZAÇÃO-brightgreen?style=for-the-badge)
+![Status](https://img.shields.io/badge/STATUS-COMPLETED-brightgreen?style=for-the-badge)
 </div>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-documentação">Documentação</a> • 
- <a href="#-desenvolvimento">Desenvolvimento</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-layout">Layout</a> • 
- <a href="#-autor">Autor</a> • 
- <a href="#-licença">Licença</a>
+  <a href="#-about-the-project">About</a> •
+  <a href="#-documentation">Documentation</a> •
+  <a href="#-development">Development</a> •
+  <a href="#-technologies">Technologies</a> •
+  <a href="#-layout">Layout</a> •
+  <a href="#-author">Author</a> •
+  <a href="#-license">License</a>
 </p>
 
 ---
 
-## 💻 Sobre o projeto
+## 💻 About the Project
 
-O PokeApp é uma Pokédex com uma página principal exibindo uma lista de Pokémon que podem ser marcados como favoritos. Ele funciona como uma enciclopédia virtual, onde você pode explorar informações sobre diversos Pokémon. Cada Pokémon tem uma tela de detalhes acessível através de seus respectivos cards na Pokédex, onde você pode ver informações como tipo, habilidades e outros detalhes interessantes. Além disso, o aplicativo possui uma página dedicada apenas aos Pokémon que você marcou como favoritos, permitindo fácil acesso aos seus preferidos.
+**PokeApp** is a Pokédex with a main page displaying a list of Pokémon that can be marked as favorites. It works as a virtual encyclopedia where you can explore information about various Pokémon. Each Pokémon has a details screen accessible through their respective cards in the Pokédex, where you can view information such as type, abilities, and other interesting details. Additionally, the app has a dedicated page for Pokémon you marked as favorites, allowing easy access to your preferred ones.
 
-Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
+Project available at: **https://pokedexcatalog.netlify.app/**.
 
-## 📋 Documentação
+## 📋 Documentation
 
 -   **[Wiki](https://github.com/Jinkogule/PokeApp/wiki)**
 
-## 🧑🏻‍💻 Desenvolvimento
+## 🧑🏻‍💻 Development
 
--   **[Código fonte](https://github.com/Jinkogule/PokeApp)**
+-   **[Source Code](https://github.com/Jinkogule/PokeApp)**
 -   **[Issue Tracking](https://github.com/Jinkogule/PokeApp/issues)**
 
-## 🛠 Tecnologias
+## 🛠 Technologies
 
 ### **Website**  **([Angular](https://www.php.net/)**  +  **[Ionic](https://laravel.com/))**
 
@@ -44,19 +43,19 @@ Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
 -   **[Ionic 7.2.0](https://ionicframework.com/)**
 -   **[Node 20.15.1](https://nodejs.org/)**
 
-> Para mais detalhes sobre as configurações do projeto, veja os arquivos **[angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json)**, **[package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json)**, **[tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json)** e **[ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json)**.
+> For more details about project configurations, check the files **[angular.json](https://github.com/Jinkogule/PokeApp/blob/main/angular.json)**, **[package.json](https://github.com/Jinkogule/PokeApp/blob/main/package.json)**, **[tsconfig.json](https://github.com/Jinkogule/PokeApp/blob/main/tsconfig.json)** and **[ionic.config.json](https://github.com/Jinkogule/PokeApp/blob/main/ionic.config.json)**.
 
-### **Hospedagem**
+### **Hosting**
 
 -   **[Netlify](https://app.netlify.com/)** → **[PokeApp](https://pokedexcatalog.netlify.app/)**
 
-### **Serviços e Add-ons**
+### **Services and Add-ons**
 
 -   **[PokeAPI](https://platform.openai.com/docs/overview)**
 
 ## 🎨 Layout
 
-### Telas da aplicação
+### Application Screens
 <table>
   <tr>
     <td align="center">
@@ -84,19 +83,19 @@ Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
   </tr>
   <tr>
     <td align="center">
-      <img src="/src/screenshots/menu-desktop.png" alt="Menu de navegação (Desktop)" title="Menu de navegação (Desktop)">
+      <img src="/src/screenshots/menu-desktop.png" alt="Navigation Menu (Desktop)" title="Navigation Menu (Desktop)">
       <br>
-      <em>Menu de navegação (Desktop)</em>
+      <em>Navigation Menu (Desktop)</em>
     </td>
     <td align="center">
-      <img src="/src/screenshots/menu-cel.png" alt="Menu de navegação (Mobile)" title="Menu de navegação (Mobile)">
+      <img src="/src/screenshots/menu-cel.png" alt="Navigation Menu (Mobile)" title="Navigation Menu (Mobile)">
       <br>
-      <em>Menu de navegação (Mobile)</em>
+      <em>Navigation Menu (Mobile)</em>
     </td>
   </tr>
 </table>
 
-## ✒ Autor
+## ✒ Author
 
 <table>
   <tr>
@@ -114,6 +113,6 @@ Projeto disponível em: **https://pokedexcatalog.netlify.app/**.
   </tr>
 </table>
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está sob a licença **[MIT](./LICENSE)**.
+This project is licensed under the **[MIT](./LICENSE)** license.
