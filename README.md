@@ -17,7 +17,7 @@
   <a href="#-author">Author</a> •
   <a href="#-license">License</a>
   <br>
-  <a href="./README.pt.md">Português (BR)</a> •
+  <a href="./README.pt-BR.md">Português (BR)</a> •
   <a href="./README.md">English</a>
 </p>
 
